@@ -7,6 +7,10 @@ export default {
   name: '',
   data() {
     return {};
+  },
+  mounted(){
+    console.log(process.env.NODE_ENV)
+    console.log(process.env.VUE_APP_TEST)
   }
 };
 </script>

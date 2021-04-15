@@ -16,7 +16,9 @@ const buildPage = function(pageName){
   }
   console.log(chalk.yellow(`正在打包: ${pageName}`))
   process.env.BUILD_PAGE = pageName
-  execFileSync( 'vue-cli-service', ['build'], {})
+  execFileSync( 'vue-cli-service', ['build'], {
+    stdio: ['inherit', 'inherit', 'inherit']
+  })
   console.log(chalk.green(`页面${pageName}打包完成`))
 }
 

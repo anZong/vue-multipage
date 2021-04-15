@@ -8,9 +8,8 @@ const getPage = function(pageName){
 }
 
 const config = {
-  outputDir: process.env.NODE_ENV === 'production' ? `dist/${process.env.BUILD_PAGE}` : 'dist',
+  outputDir: process.env.NODE_ENV === 'production' && process.env.BUILD_MODE === 'separate' ? `dist/${process.env.BUILD_PAGE}` : 'dist',
   assetsDir: 'static',
   pages: getPage(process.env.BUILD_PAGE)
 }
-console.log(config)
 module.exports = config
